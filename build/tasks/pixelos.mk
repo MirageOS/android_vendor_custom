@@ -16,7 +16,7 @@
 # -----------------------------------------------------------------
 # PixelOS OTA update package
 
-CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/PixelOS_$(CUSTOM_VERSION).zip
+CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/MirageOS_$(CUSTOM_VERSION).zip
 
 MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 
@@ -25,5 +25,5 @@ $(CUSTOM_TARGET_PACKAGE): $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) $(MD5) $(CUSTOM_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(CUSTOM_TARGET_PACKAGE).md5sum
 	@echo "Package Complete: $(CUSTOM_TARGET_PACKAGE)" >&2
 
-.PHONY: pixelos
-pixelos: $(CUSTOM_TARGET_PACKAGE) $(DEFAULT_GOAL)
+.PHONY: mirage
+mirage: $(CUSTOM_TARGET_PACKAGE) $(DEFAULT_GOAL)
