@@ -90,3 +90,7 @@ include vendor/custom/config/ota.mk
 
 # Version
 include vendor/custom/config/version.mk
+
+# Maintainer
+MIRAGE_MAINTAINER ?= Unknown
+PRODUCT_SYSTEM_PROPERTIES += ro.build.mirage.maintainer=$(MIRAGE_MAINTAINER)
