@@ -94,3 +94,10 @@ include vendor/custom/config/version.mk
 # Maintainer
 MIRAGE_MAINTAINER ?= Unknown
 PRODUCT_SYSTEM_PROPERTIES += ro.build.mirage.maintainer=$(MIRAGE_MAINTAINER)
+
+# Official build flag (shown as a verified badge in Settings > About)
+ifeq ($(IS_OFFICIAL),true)
+PRODUCT_SYSTEM_PROPERTIES += ro.build.mirage.official=true
+else
+PRODUCT_SYSTEM_PROPERTIES += ro.build.mirage.official=false
+endif
